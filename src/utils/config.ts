@@ -80,12 +80,12 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   analytics?: unknown;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = 'Spirited Syntax';
 
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
-    site: undefined,
+    site: 'https://spiritedSyntax.com',
     base: '/',
     trailingSlash: false,
 
