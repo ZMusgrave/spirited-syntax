@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: "https://astrowind.vercel.app"
+  name: SpiritedSyntax
+  site: "https://spiritedsyntax.com"
   base: "/"
   trailingSlash: false
 
@@ -9,9 +9,10 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: "%s — AstroWind"
+    default: SpiritedSyntax
+    template: "%s — SpiritedSyntax"
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  # return to update description musgravez todo
   robots:
     index: true
     follow: true
