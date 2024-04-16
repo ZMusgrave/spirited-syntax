@@ -11,13 +11,13 @@ metadata:
   title:
     default: SpiritedSyntax
     template: "%s — SpiritedSyntax"
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "🚀 Innovative software consultancy specializing in modifying legacy systems. We also craft high-performance websites, web apps, and digital experiences tailored to your business needs. Leverage us handle the tech, you handle the business."
   # return to update description musgravez todo
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: SpiritedSyntax
     images:
       - url: "~/assets/images/default.png"
         width: 1200
@@ -36,7 +36,6 @@ apps:
   blog:
     isEnabled: true
     postsPerPage: 6
-
     post:
       isEnabled: true
       permalink: "/%slug%" # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
