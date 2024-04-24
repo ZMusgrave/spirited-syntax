@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/NonNavPageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Image from 'astro/components/Image.astro';
+import Logo from '~/assets/images/horizontal-logo.svg';
+
+const metadata = {
+  title: 'Spirited Syntax - Welcome to the future',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    title="Spirited solutions for Your Unique Software Needs"
+    subtitle="Learn how to design a Click-Through Landing Page that seamlessly guides visitors to your main offer."
+    actions={[
+      { variant: 'primary', text: 'See More', href: '#', icon: 'tabler:rocket' },
+      { text: 'About Us', href: '#' },
+    ]}
+    image={{
+      src: '~/assets/images/happy-camp.svg',
+      alt: 'Click-through Landing Page Hero Image',
+      style: 'object-fit: contain',
+    }}
+  >
+    <Fragment slot="tagline">
+      <!-- Free template for <span class="hidden xl:inline">creating websites with</span>
+      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS -->
+      <Image src={Logo} alt="nums" height={50} width={450} class="mb-5" />
+    </Fragment>
+  </Hero2>
+</Layout>
