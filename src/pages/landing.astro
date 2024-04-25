@@ -2,7 +2,9 @@
 import Layout from '~/layouts/NonNavPageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Image from 'astro/components/Image.astro';
-import Logo from '~/assets/images/horizontal-logo.svg';
+import Braces from '~/assets/images/braces.svg';
+import Spirited from '~/components/ui/Spirited.astro';
+import Syntax from '~/components/ui/Syntax.astro';
 
 const metadata = {
   title: 'Spirited Syntax - Welcome to the future',
@@ -26,9 +28,11 @@ const metadata = {
     }}
   >
     <Fragment slot="tagline">
-      <!-- Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS -->
-      <Image src={Logo} alt="nums" height={50} width={450} class="mb-5" />
+      <div class="flex items-center gap-5 mb-5">
+        <Image src={Braces} alt="nums" height={50} width={90} />
+        <Spirited fillColor={'#38C5CA'} />
+        <Syntax />
+      </div>
     </Fragment>
-  </Hero2>
-</Layout>
+  </Hero2></Layout
+>
