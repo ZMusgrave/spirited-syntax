@@ -1,10 +1,7 @@
 ---
 import Layout from '~/layouts/NonNavPageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Image from 'astro/components/Image.astro';
-import Braces from '~/assets/images/braces.svg';
-import Spirited from '~/components/ui/Spirited.astro';
-import Syntax from '~/components/ui/Syntax.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import swirl from '~/assets/images/swirls-dark.mp4';
 
 const metadata = {
   title: 'Spirited Syntax - Welcome to the future',
@@ -12,27 +9,18 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
+  <header class="relative flex items-center justify-center h-screen mb-12">
+    <video autoplay muted loop class="absolute z-10 w-auto min-w-full min-h-full max-w-[1600px]">
+      <source src={swirl} />
+    </video>
 
-  <Hero2
-    title="Spirited solutions for Your Unique Software Needs"
-    subtitle="Learn how to design a Click-Through Landing Page that seamlessly guides visitors to your main offer."
-    actions={[
-      { variant: 'primary', text: 'See More', href: '#', icon: 'tabler:rocket' },
-      { text: 'About Us', href: '#' },
-    ]}
-    image={{
-      src: '~/assets/images/happy-camp.svg',
-      alt: 'Click-through Landing Page Hero Image',
-      style: 'object-fit: contain',
-    }}
-  >
-    <Fragment slot="tagline">
-      <div class="flex items-center gap-5 mb-5">
-        <Image src={Braces} alt="nums" height={50} width={90} />
-        <Spirited fillColor={'#38C5CA'} />
-        <Syntax />
-      </div>
-    </Fragment>
-  </Hero2></Layout
->
+    <div class="relative z-30">
+      <Hero3
+        actions={[
+          { variant: 'primary', text: 'See More', href: '#', icon: 'tabler:rocket' },
+          { text: 'About Us', href: '#' },
+        ]}
+      />
+    </div>
+  </header>
+</Layout>
