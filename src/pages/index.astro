@@ -1,12 +1,15 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import ConstructionImage from 'src/assets/images/under-construction-cropped.svg';
 import Image from 'astro/components/Image.astro';
 
-const title = `Spirited Syntax - Under Construction`;
+const metadata = {
+  title: 'Spirited Syntax - Under Construction',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout metadata={{ title }}>
+<Layout metadata={metadata}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="m-auto max-w-xl">
       <Image

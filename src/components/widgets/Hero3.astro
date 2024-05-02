@@ -1,0 +1,54 @@
+---
+import Image from '~/components/common/Image.astro';
+import type { CallToAction } from '~/types';
+import Button from '~/components/ui/Button.astro';
+import Braces from '~/assets/images/braces.svg';
+import Spirited from '~/components/ui/Spirited.astro';
+import Syntax from '~/components/ui/Syntax.astro';
+
+export interface Props {
+  content?: string;
+  actions?: string | CallToAction[];
+  image?: string | any; // TODO: find HTMLElementProps
+}
+
+const { content = await Astro.slots.render('content'), actions = await Astro.slots.render('actions') } = Astro.props;
+---
+
+<section class="relative md:mt-[76px] not-prose">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="flex gap-5 w-[55%] pb-6">
+      <Image src={Braces} alt="nums" width={80} />
+      <Spirited fillColor={'#C1FF72'} />
+      <Syntax />
+    </div>
+    <div class="pb-12 md:pb-20 lg:py-0 lg:flex lg:items-center lg:gap-8 lg:w-[1200px]">
+      <div class="text-center lg:text-left mb-10 md:mb-16">
+        <h1 class="text-5xl md:text-[72px] font-bold font-landing mb-4 dark:text-red-600 font">SOFTWARE</h1>
+        <h1 class="text-5xl md:text-[76px] font-bold font-landing mb-4 dark:text-red-600 font">DESIGN</h1>
+        <h1 class="text-5xl md:text-[76px] font-bold font-landing mb-4 dark:text-red-600 font">STUDIO</h1>
+
+        <div class="max-w-3xl mx-auto lg:max-w-none">
+          {
+            actions && (
+              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
+                {Array.isArray(actions) ? (
+                  actions.map((action) => (
+                    <div class="flex w-full sm:w-auto">
+                      <Button {...(action || {})} class="w-full sm:mb-0" />
+                    </div>
+                  ))
+                ) : (
+                  <Fragment set:html={actions} />
+                )}
+              </div>
+            )
+          }
+        </div>
+        {content && <Fragment set:html={content} />}
+      </div>
+    </div>
+  </div>
+</section>
